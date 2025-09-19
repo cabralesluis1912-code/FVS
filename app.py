@@ -1,0 +1,1 @@
+print("hola, Phyton ya funciona en VS Code")
