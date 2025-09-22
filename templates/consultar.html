@@ -1,0 +1,39 @@
+<h1>{{ titulo }}</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Fecha Recepción</th>
+            <th>No. Solicitud</th>
+            <th>Inicio Vigencia</th>
+            <th>Término Vigencia</th>
+            <th>Plaza</th>
+            <th>ID Plaza</th>
+            <th>Nombre Candidato</th>
+            <th>Régimen Contractual</th>
+            <th>Status</th>
+            <th>Fecha Liberación</th>
+            <th>Departamento</th>
+            <th>Observaciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in solicitudes %}
+        <tr>
+            <td>{{ row.ID }}</td>
+            <td>{{ row.Fecha_Recepcion }}</td>
+            <td>{{ row.Numero_Solicitud }}</td>
+            <td>{{ row.Inicio_Vigencia }}</td>
+            <td>{{ row.Termino_Vigencia }}</td>
+            <td>{{ row.Plaza }}</td>
+            <td>{{ row.ID_Plaza }}</td>
+            <td>{{ row.Nombre_Candidato }}</td>
+            <td>{{ row.Regimen_Contractual }}</td>
+            <td>{{ row.Status }}</td>
+            <td>{{ row.Fecha_Liberacion }}</td>
+            <td>{{ row.Departamento }}</td>
+            <td>{{ row.Observaciones }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
