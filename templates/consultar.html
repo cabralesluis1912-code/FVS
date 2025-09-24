@@ -1,39 +1,82 @@
-<h1>{{ titulo }}</h1>
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Fecha Recepción</th>
-            <th>No. Solicitud</th>
-            <th>Inicio Vigencia</th>
-            <th>Término Vigencia</th>
-            <th>Plaza</th>
-            <th>ID Plaza</th>
-            <th>Nombre Candidato</th>
-            <th>Régimen Contractual</th>
-            <th>Status</th>
-            <th>Fecha Liberación</th>
-            <th>Departamento</th>
-            <th>Observaciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for row in solicitudes %}
-        <tr>
-            <td>{{ row.ID }}</td>
-            <td>{{ row.Fecha_Recepcion }}</td>
-            <td>{{ row.Numero_Solicitud }}</td>
-            <td>{{ row.Inicio_Vigencia }}</td>
-            <td>{{ row.Termino_Vigencia }}</td>
-            <td>{{ row.Plaza }}</td>
-            <td>{{ row.ID_Plaza }}</td>
-            <td>{{ row.Nombre_Candidato }}</td>
-            <td>{{ row.Regimen_Contractual }}</td>
-            <td>{{ row.Status }}</td>
-            <td>{{ row.Fecha_Liberacion }}</td>
-            <td>{{ row.Departamento }}</td>
-            <td>{{ row.Observaciones }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ titulo }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { text-align: center; }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+        }
+        td {
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ titulo }}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>FECHA DE RECEPCION</th>
+                <th>EPS</th>
+                <th>SUBDIRECCION</th>
+                <th>NUMERO DE SOLICITUD</th>
+                <th>INICIO VIGENCIA</th>
+                <th>TERMINO VIGENCIA</th>
+                <th>PLAZA</th>
+                <th>ID. PLAZA</th>
+                <th>GPO PLAZA</th>
+                <th>NIVEL</th>
+                <th>JURISDICCION SINDICAL DE PLAZA</th>
+                <th>MOTIVO DE COBERTURA</th>
+                <th>FICHA / ID BTI</th>
+                <th>NOMBRE DEL CANDIDATO</th>
+                <th>REGIMEN CONTRACTUAL</th>
+                <th>STATUS</th>
+                <th>FECHA LIBERACION AL DP</th>
+                <th>DEPARTAMENTO DE PERSONAL</th>
+                <th>OBSERVACIONES</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in solicitudes %}
+            <tr>
+                <td>{{ row["No."] }}</td>
+                <td>{{ row["FECHA DE RECEPCION"] }}</td>
+                <td>{{ row["EPS"] }}</td>
+                <td>{{ row["SUBDIRECCION"] }}</td>
+                <td>{{ row["NUMERO DE SOLICITUD"] }}</td>
+                <td>{{ row["INICIO VIGENCIA"] }}</td>
+                <td>{{ row["TERMINO VIGENCIA"] }}</td>
+                <td>{{ row["PLAZA"] }}</td>
+                <td>{{ row["ID. PLAZA"] }}</td>
+                <td>{{ row["GPO PLAZA"] }}</td>
+                <td>{{ row["NIVEL"] }}</td>
+                <td>{{ row["JURISDICCION SINDICAL DE PLAZA"] }}</td>
+                <td>{{ row["MOTIVO DE COBERTURA"] }}</td>
+                <td>{{ row["FICHA / ID BTI"] }}</td>
+                <td>{{ row["NOMBRE DEL CANDIDATO"] }}</td>
+                <td>{{ row["REGIMEN CONTRACTUAL"] }}</td>
+                <td>{{ row["STATUS"] }}</td>
+                <td>{{ row["FECHA LIBERACION AL DP"] }}</td>
+                <td>{{ row["DEPARTAMENTO DE PERSONAL"] }}</td>
+                <td>{{ row["OBSERVACIONES"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
